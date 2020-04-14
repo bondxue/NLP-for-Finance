@@ -1,1 +1,1 @@
-# ML-for-Trading
+# NLP-for-Trading
