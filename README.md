@@ -1,8 +1,10 @@
-# NLP in Finance 
+# NLP with Financial Applications 
 
 ## PART 1: NLP on Financial Statements
 
 In this part, I have done NLP Anlysis on 10-k financial statements to generate an alpha factor. For the dataset, I used the end of day from Quotemedia and Loughran-McDonald sentiment word lists.
+
+
 
 
 
