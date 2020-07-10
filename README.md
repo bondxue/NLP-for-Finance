@@ -7,14 +7,13 @@ In this project, I have done NLP anlaysis on **10-k financial statements** to ge
 ### Step 1:  Get list of `10-Ks`
 
 1. Use  `request` moduel to extract `10-k` reports from `SEC` API. Download  10-Ks html files for a few companies based on their `CIK`.
+
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/sec_api.png" width="600">
    
-![sec api](Sentiment_Analysis_for_Financial_Statements/images/sec_api.png)
-   
-   
+  
    
    + One tricky thing is that `SEC` has a limit on the number of calls we can make to the website per second. In order to avoid hiting that limit, I have created the `SecAPI` class to cache data from the `SEC`.  
-   
-   ![html](Sentiment_Analysis_for_Financial_Statements/images/html.png)
+   <img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/html.png" width="600">
    
    
    
@@ -32,7 +31,7 @@ In this project, I have done NLP anlaysis on **10-k financial statements** to ge
 
 use the **Loughran and McDonald sentiment word lists** .  The word lists cover the following sentiment:`Negative`, `Positive`, `Uncertainty`, `Litigious`, `Constraining`, `Superfluous`, `Interesting`, `Modal`. We choose a few of them to do sentiment analysis on the 10-Ks.
 
-![dict](Sentiment_Analysis_for_Financial_Statements/images/dict.png)
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/dict.png" width="600">
 
 #### Bag of Words
 
@@ -42,8 +41,7 @@ Use **bag of words**, calculate the **jaccard similarity** on the bag of words a
 
 + Since the input, `bag_of_words_matrix`, is a bag of words for each time period in order, we just need to compute the jaccard similarities for each *neighboring* bag of words. 
 
-![dict](Sentiment_Analysis_for_Financial_Statements/images/bow.png)
-
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/bow.png" width="600">
 
 
 #### TFIDF
@@ -52,7 +50,7 @@ use the sentiment word list, try to use alternative sentiment **TFIDF** model fr
 
 Then calculate the **cosine similarity** for each *neighboring* bag of words. 
 
-![dict](Sentiment_Analysis_for_Financial_Statements/images/tfidf.png)
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/tfidf.png" width="600">
 
 
 
@@ -61,14 +59,6 @@ Then calculate the **cosine similarity** for each *neighboring* bag of words.
 
 
 
-
-
-
-
-
-
-
-In this part, I have done NLP Anlysis on 10-k financial statements to generate an alpha factor. For the dataset, I used the end of day from Quotemedia and Loughran-McDonald sentiment word lists.
 
 
 
