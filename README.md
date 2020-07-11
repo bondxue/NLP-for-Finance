@@ -1,6 +1,6 @@
 # NLP in Finance 
 
-## PART 1: NLP on Financial Statements
+## Project 1: NLP on Financial Statements
 
 In this project, I have done NLP anlaysis on **10-k financial statements** to generate an alpha factor. 
 
@@ -57,15 +57,6 @@ Then calculate the **cosine similarity** for each *neighboring* bag of words.
 
 
 
-
-
-
-
-
-
-
-
-
-## PART 2: Sentiment Analysis with Neural Networks 
+## Project 2: Sentiment Analysis with Neural Networks 
 
 In this part, I have built deep learning model to classify the sentiment of messages from [StockTwits](https://stocktwits.com/), a social network for investors and traders. My model is able to predict if any particular message is positive or negative. From this, I am able to generate a signal of the public sentiment for various ticker symbols.
