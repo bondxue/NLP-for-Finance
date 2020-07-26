@@ -7,17 +7,16 @@ In this project, I have done NLP anlaysis on **10-k financial statements** to ge
 ### Step 1:  Get list of `10-Ks`
 
 1. Use  `request` moduel to extract `10-k` reports from `SEC` API. Download  10-Ks html files for a few companies based on their `CIK`.
-   
-![sec api](Sentiment_Analysis_for_Financial_Statements/images/sec_api.png)
-   
-   
-   
+
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/sec_api.png" width="600">
+
+  
+
    + One tricky thing is that `SEC` has a limit on the number of calls we can make to the website per second. In order to avoid hiting that limit, I have created the `SecAPI` class to cache data from the `SEC`.  
+      <img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/html.png" width="600">
+
    
-   ![html](Sentiment_Analysis_for_Financial_Statements/images/html.png)
-   
-   
-   
+
 2. Use `re` for tags  (`<DOCUMENT>`, `</DOCUMENT>`, `<Type>`) to extract sections contain 10-information and create dictionary for 10-Ks. 
 
 ### Step 2:  Preprocess the data
@@ -32,7 +31,7 @@ In this project, I have done NLP anlaysis on **10-k financial statements** to ge
 
 use the **Loughran and McDonald sentiment word lists** .  The word lists cover the following sentiment:`Negative`, `Positive`, `Uncertainty`, `Litigious`, `Constraining`, `Superfluous`, `Interesting`, `Modal`. We choose a few of them to do sentiment analysis on the 10-Ks.
 
-![dict](Sentiment_Analysis_for_Financial_Statements/images/dict.png)
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/dict.png" width="600">
 
 #### Bag of Words
 
@@ -42,8 +41,7 @@ Use **bag of words**, calculate the **jaccard similarity** on the bag of words a
 
 + Since the input, `bag_of_words_matrix`, is a bag of words for each time period in order, we just need to compute the jaccard similarities for each *neighboring* bag of words. 
 
-![dict](Sentiment_Analysis_for_Financial_Statements/images/bow.png)
-
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/bow.png" width="600">
 
 
 #### TFIDF
@@ -52,30 +50,22 @@ use the sentiment word list, try to use alternative sentiment **TFIDF** model fr
 
 Then calculate the **cosine similarity** for each *neighboring* bag of words. 
 
-![dict](Sentiment_Analysis_for_Financial_Statements/images/tfidf.png)
+<img src="https://github.com/bondxue/NLP-for-Finance/blob/master/Sentiment_Analysis_for_Financial_Statements/images/tfidf.png" width="600">
 
 
 
+### Step 4: Evaluate Alpha Factors
 
-
-
-
-
-
-
-
-
-
-
-
-In this part, I have done NLP Anlysis on 10-k financial statements to generate an alpha factor. For the dataset, I used the end of day from Quotemedia and Loughran-McDonald sentiment word lists.
-
-
-
-
+We want to evaluate the alpha factors only considering cosine similarities here. We use the yearly pricing from Quotemedia to run the factor agaist, since 10-Ks are produced annually. 
 
 
 
 ## PART 2: Sentiment Analysis with Neural Networks 
+
+When deciding the value of a compa
+
+
+
+
 
 In this part, I have built deep learning model to classify the sentiment of messages from [StockTwits](https://stocktwits.com/), a social network for investors and traders. My model is able to predict if any particular message is positive or negative. From this, I am able to generate a signal of the public sentiment for various ticker symbols.
