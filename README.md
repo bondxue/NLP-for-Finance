@@ -61,9 +61,9 @@ We want to evaluate the alpha factors only considering cosine similarities here.
 
 When deciding the value of a company, it's important to follow the news. For example, a product recall or natural disaster in a company's product chain. We want to be able to turn this information into a signal.
 
-For this project, I will use posts from the social media site [StockTwits](https://en.wikipedia.org/wiki/StockTwits). The community on StockTwits is full of investors, traders, and entrepreneurs. Each message posted is called a *Twit*. This is similar to Twitter's version of a post, called a Tweet. I will build a model around these twits that generate a sentiment score.
+For this project, I use posts from the social media site [StockTwits](https://en.wikipedia.org/wiki/StockTwits). The community on StockTwits is full of investors, traders, and entrepreneurs. Each message posted is called a *Twit*. This is similar to Twitter's version of a post, called a Tweet. I  build a model around these twits that generate a sentiment score.
 
-After collecting a bunch of twits, then hand labeled the sentiment of each. To capture the degree of sentiment, we'll use a five-point scale: `very negative`, `negative`, `neutral`, `positive`, `very positive`. Each twit is labeled -2 to 2 in steps of 1, from very negative to very positive respectively. I will build a sentiment analysis model that will learn to assign sentiment to twits on its own, using this labeled data.
+After collecting a bunch of twits, then hand labeled the sentiment of each. To capture the degree of sentiment, we'll use a five-point scale: `very negative`, `negative`, `neutral`, `positive`, `very positive`. Each twit is labeled -2 to 2 in steps of 1, from very negative to very positive respectively. I build a sentiment analysis model that will learn to assign sentiment to twits on its own, using this labeled data.
 
 
 
